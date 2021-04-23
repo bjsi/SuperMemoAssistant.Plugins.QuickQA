@@ -1,0 +1,103 @@
+﻿<mah:MetroWindow x:Class="SuperMemoAssistant.Plugins.QuickQA.UI.QuickQAWdw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:SuperMemoAssistant.Plugins.QuickQA.UI"
+        mc:Ignorable="d"
+        Title="Quick QA"
+        Width="300"
+        Topmost="True"
+        KeyDown="MetroWindow_KeyDown"
+        WindowStartupLocation="CenterScreen"
+        Height="250"
+        >
+  <mah:MetroWindow.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+        <!-- Accent and AppTheme setting -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </mah:MetroWindow.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="2*"></RowDefinition>
+      <RowDefinition Height="2*"></RowDefinition>
+      <RowDefinition Height="50"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <!-- Hint Textbox and label -->
+    <Grid Grid.Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1.5*"></RowDefinition>
+        <RowDefinition Height="1.5*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Label Grid.Row="0"
+             FontWeight="Bold"
+             Content="Question"
+             Margin="5"
+             VerticalContentAlignment="Bottom">
+      </Label>
+      <TextBox TabIndex="0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Margin="5"
+                Focusable="True"
+                Text="{Binding Question, Mode=TwoWay}"
+                KeyDown="QuestionTextBox_KeyDown"
+                Name="QuestionTextBox">
+      </TextBox>
+    </Grid>
+
+    <!-- Hint Textbox and label -->
+    <Grid Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1.5*"></RowDefinition>
+        <RowDefinition Height="1.5*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Label Grid.Row="0"
+             FontWeight="Bold"
+             Content="Answer"
+             Margin="5"
+             VerticalContentAlignment="Bottom">
+      </Label>
+      <TextBox TabIndex="0"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Margin="5"
+                Focusable="True"
+                Text="{Binding Answer, Mode=TwoWay}"
+                KeyDown="AnswerTextBox_KeyDown"
+                Name="AnswerTextBox">
+      </TextBox>
+    </Grid>
+    
+    <!-- Ok and Cancel Buttons -->
+    <Grid Grid.Row="4">
+      <Button Content="Create"
+              TabIndex="5"
+              Margin="8"
+              Grid.Column="1"
+              HorizontalAlignment="Right"
+              Name="OkBtn"
+              Click="OkBtn_Click">
+      </Button>
+      <Button Content="Cancel"
+              Margin="8"
+              TabIndex="6"
+              HorizontalAlignment="Left"
+              Name="CancelBtn"
+              Click="CancelBtn_Click">
+      </Button>
+    </Grid>
+  </Grid>
+</mah:MetroWindow>
