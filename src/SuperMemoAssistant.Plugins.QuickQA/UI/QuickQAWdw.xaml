@@ -51,6 +51,7 @@
                 VerticalAlignment="Top"
                 Margin="5"
                 Focusable="True"
+                TextWrapping="Wrap"
                 Text="{Binding Question, Mode=TwoWay}"
                 KeyDown="QuestionTextBox_KeyDown"
                 Name="QuestionTextBox">
@@ -75,6 +76,7 @@
                 VerticalAlignment="Top"
                 Margin="5"
                 Focusable="True"
+                TextWrapping="Wrap"
                 Text="{Binding Answer, Mode=TwoWay}"
                 KeyDown="AnswerTextBox_KeyDown"
                 Name="AnswerTextBox">
